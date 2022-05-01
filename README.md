@@ -21,4 +21,6 @@ We have devised a prototype that is capable of classifying a comment/text on the
 
 Disclaimer: The dataset has extremely offensive language that will show up during exploratory data analysis done in the Jupyter notebook itself.
 
-### Screenshots of the Prototype:
+
+### Algorithms and Techniques:
+
