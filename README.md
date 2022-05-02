@@ -31,7 +31,7 @@ To perform the classification of toxic comment in our application, we have utili
 - Support Vector Machine
 - Minimum Edit Distance
 
-### Logistic Regresssion
+
 
 
 ## Application :
