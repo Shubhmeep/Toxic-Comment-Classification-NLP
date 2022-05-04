@@ -116,6 +116,8 @@ def main():
 				emoji_icon = emotions_emoji_dict[prediction]
 				st.write("{}:{}".format(prediction,emoji_icon))
 				st.write("Confidence:  {}".format(np.max(probability)))
+				if prediction == 'toxic':
+					st.error("Your Comment is toxic !!!")
 
 			with col2:
 				st.info("Prediction Probability")
@@ -129,7 +131,7 @@ def main():
 				st.altair_chart(fig,use_container_width=True)
 
 			if prediction == 'toxic':
-				st.error("Your Comment is toxic !!!")
+			
 				#tokenization of words and removing punctuations in the sentence
 				x = string.punctuation
 				data = word_tokenize(raw_text)
@@ -154,6 +156,10 @@ def main():
 							# print(j,"-> ", dd, "\n","The minimum edit distance is:", editDistance(j, dd, len(j), len(dd)))
 						#print(cuss)
 						med[j] = cuss
+				st.write(" ")
+				st.write(" ")
+				st.info("Candidate list of obscene words along with thier MED")
+				st.write(med)
 
 				for k in med.keys():
 					#print(k)
@@ -161,6 +167,9 @@ def main():
 					for i in med[k].keys():
 						if med[k][i] == x:
 							#print(i)
+							st.info("Toxic words being replaced !!")
+							st.write(k,"➡️",i)
+							
 							raw_text = raw_text.replace(k,i)
 							break
 				st.subheader("Corrected comment :")
